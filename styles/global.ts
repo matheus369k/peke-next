@@ -28,18 +28,4 @@ export const GlobalStyled = createGlobalStyle`
     font-family: Arial, Helvetica, sans-serif;
   }
 
-  h1 {
-    text-transform: capitalize;
-  }
-
-  li > p, h1, a {
-    display: block;
-    margin: auto;
-    text-align: center;
-  }
-
-  main > ul > li {
-    margin-top: 2rem;
-  }
-
 `
