@@ -24,7 +24,7 @@ async function getPokemons(start: number, end: number) {
 }
 
 export default async function Home() {
-  const pokemons = await getPokemons(1, 32)
+  const pokemons = await getPokemons(0, 32)
 
   return (
     <StyledHome>
