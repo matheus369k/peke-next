@@ -23,7 +23,7 @@ export const StyledHome = styled.div`
             font-size: 3rem;
 
             span {
-                color: ${props=> props.theme.black};
+                color: ${props=> props.theme["gray-100"]};
             }
         }
     }
