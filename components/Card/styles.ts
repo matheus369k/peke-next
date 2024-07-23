@@ -14,11 +14,11 @@ export const StyledCard = styled.li`
     width: 23%;
 
     border-radius: 1rem;
-    border: 2px solid ${props => props.theme.red};
+    border: 1px solid ${props => props.theme.red};
 
     box-shadow: .3125rem .3125rem .75rem ${props=>props.theme["black/50"]};
 
-    background: ${props => props.theme["gray-500"]};
+    background: ${props => props.theme["gray-900"]};
     color: ${props => props.theme.white};
 
     h3 {

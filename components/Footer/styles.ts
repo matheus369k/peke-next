@@ -10,6 +10,8 @@ export const StyledFooter = styled.footer`
     justify-content: center;
     align-items: center;
 
+    margin-top: 4rem;
+
     p {
         font-weight: bold;
         font-size: 1rem;
