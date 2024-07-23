@@ -1,8 +1,31 @@
 export const defaultTheme = {
     white: '#fff',
     black: '#000',
-    red: 'red',
+    red: '#dc2626',
+
     'black/50': 'rgba(0, 0, 0, .5)',
 
+    'gray-100': '#f3f4f6',
     'gray-500': '#999',
+    'gray-900': '#111827',
+    'gray-950': '#030712',
+
+    type_normal: '#aa9',
+    type_fire: '#f42',
+    type_water: '#39f',
+    type_eletric: '#fc3',
+    type_grass: '#7c5',
+    type_ice: '#6cf',
+    type_fighting: '#b54',
+    type_poison: '#a59',
+    type_ground: '#db5',
+    type_flying: '#89f',
+    type_psychic: '#f59',
+    type_bug: '#ab2',
+    type_rock: '#ba6',
+    type_ghost: '#66b',
+    type_dragon: '#76e',
+    type_dark: '#754',
+    type_steel: '#aab',
+    type_fairy: '#e9e',
 }
