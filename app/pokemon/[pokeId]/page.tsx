@@ -305,7 +305,7 @@ interface ListPokeType {
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon/')
+    const response = await fetch('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=10000')
     const data: ListPokeType = await response.json()
 
     const paths = data.results.map((pokemon_, index) => {
@@ -318,7 +318,7 @@ export async function generateStaticParams() {
 }
 
 async function getPokemon(id: string) {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${Number(id)}`)
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${Number(id)}`, {next: {revalidate: false}})
     const data: SinglePokeType = await response.json()
 
     return data

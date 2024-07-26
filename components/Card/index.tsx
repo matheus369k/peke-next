@@ -1,6 +1,10 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { StyledCard } from './styles'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 interface SinglePokeType {
     id: number
@@ -282,24 +286,54 @@ interface SinglePokeType {
     weight: number
 }
 
-type UrlType = { url: string }
-
-async function getPokemon(url: string) {
-    const response = await fetch(url)
-    const data: SinglePokeType = await response.json()
-
-    return {
-        id: data.id.toString().padStart(4, '0'),
-        name: data.name,
-        image: data.sprites.other['official-artwork'].front_default || 'https://placehold.co/200x400',
-    }
+interface CardPokeType {
+    id: string
+    name: string
+    image: string
 }
 
-export async function Card({ url }: UrlType) {
-    const dataPoke = await getPokemon(url);
+interface UrlType {
+    url: string
+    endCard: boolean
+    amountPokeCards: () => void
+}
+
+export function Card({ url, endCard, amountPokeCards }: UrlType) {
+    const [dataPoke, setDataPoke] = useState<CardPokeType>()
+
+    const intersectionObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            amountPokeCards()
+        }
+    })
+
+    useEffect(() => {
+        axios.get(url).then((resp => {
+            setDataPoke({
+                id: resp.data.id.toString().padStart(4, '0'),
+                name: resp.data.name,
+                image: resp.data.sprites.other['official-artwork'].front_default || 'https://placehold.co/200x400'
+            })
+        }))
+
+        document.addEventListener('scrollend', () => {
+            const cardList = document.getElementById('card-end');
+
+            if (cardList) {
+                console.log('enter')
+                intersectionObserver.observe(cardList)
+
+                cardList.removeAttribute('id')
+            }
+        })
+    }, [url])
+
+    if (!dataPoke) {
+        return
+    }
 
     return (
-        <StyledCard>
+        <StyledCard {...endCard && { id: 'card-end' }}>
             <Image src={dataPoke.image} alt='' width={120} height={120} />
 
             <span>#{dataPoke.id}</span>

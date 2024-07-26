@@ -10,6 +10,8 @@ export const StyledPokemon = styled.div`
     gap: 2rem;
     padding-top: 2rem;
 
+    position: relative;
+
     h3 {
         text-transform: capitalize;
     }
@@ -28,6 +30,11 @@ export const StyledPokemon = styled.div`
 
         border-radius: 6px
     } 
+
+    &>a {
+        position: absolute;
+        left: 0;
+    }
 `
 
 export const StyledPokeTitle = styled.div`

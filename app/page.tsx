@@ -1,6 +1,10 @@
+"use client"
+
 import Image from 'next/image'
 import { StyledHome } from './styles'
 import { Card } from '@/components/Card'
+import { useEffect, useState } from 'react'
+import { api } from '@/lib/api'
 
 interface ListPokeType {
   count: number
@@ -16,27 +20,45 @@ interface ListPokeType {
   }]
 }
 
-async function getPokemons(start: number, end: number) {
-  const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/?offset=${start}&limit=${end}`)
-  const data: ListPokeType = await resp.json()
+export default function Home() {
+  const [pokemons, setPokemons] = useState<ListPokeType>()
+  const [renderLimited, setRenderLimited] = useState({
+    start: 0,
+    end: 32
+  })
 
-  return data
-}
+  useEffect(() => {
+    api.get(`pokemon/?offset=${renderLimited.start}&limit=${renderLimited.end}`).then(resp => {
+      setPokemons(resp.data)
+    })
+  }, [renderLimited])
 
-export default async function Home() {
-  const pokemons = await getPokemons(0, 32)
+  function amountPokeCards() {
+    setRenderLimited((state)=>{
+      return {
+        ...state,
+        end: state.end + 32
+      }})
+  }
 
   return (
     <StyledHome>
       <div>
         <h1>Poke<span>Next</span></h1>
 
-        <Image src='/pokeball.png' alt='' width={50} height={50} loading='lazy' />
+        <Image src='/pokeball.png' alt='' width={50} height={50} />
       </div>
 
       <ul>
-        {pokemons.results.map(pokemon => {
-          return <Card key={pokemon.name} url={pokemon.url} />
+        {pokemons?.results.map((pokemon, index) => {
+          return (
+            <Card 
+              key={pokemon.name} 
+              endCard={index === renderLimited.end - 1} 
+              url={pokemon.url}
+              amountPokeCards={amountPokeCards}
+            />
+          )
         })}
       </ul>
     </StyledHome>
