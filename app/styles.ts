@@ -82,3 +82,36 @@ export const StyledHome = styled.div`
         }
     }
 `
+
+export const StyledNotFoundPage = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    gap: 2rem;
+
+    min-height: 60vh;
+
+    opacity: .75;
+
+    a {
+        text-decoration: none;
+
+        background: ${props => props.theme.white};
+        color: ${props => props.theme.black};
+
+        padding: .7rem 1.2rem;
+
+        border-radius: 6px;
+
+        font-weight: bold;
+
+        transition: background color .4s;
+
+        &:hover {
+            background: ${props => props.theme.red};
+            color: ${props => props.theme.white};
+        }
+    } 
+`
