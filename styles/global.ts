@@ -16,6 +16,10 @@ export const GlobalStyled = createGlobalStyle`
     text-decoration: none;
   }
 
+  html, body {
+    scroll-behavior: smooth;
+  }
+
   body {
     background: ${props => props.theme['gray-950']};
     color: ${props => props.theme['gray-100']};

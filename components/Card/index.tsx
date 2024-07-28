@@ -320,7 +320,6 @@ export function Card({ url, endCard, amountPokeCards }: UrlType) {
             const cardList = document.getElementById('card-end');
 
             if (cardList) {
-                console.log('enter')
                 intersectionObserver.observe(cardList)
 
                 cardList.removeAttribute('id')

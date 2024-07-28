@@ -8,6 +8,8 @@ export const StyledHome = styled.div`
 
     gap: 2rem;
 
+    position: relative;
+
     div {
         display: flex;
         align-items: center;
@@ -28,6 +30,18 @@ export const StyledHome = styled.div`
         }
     }
 
+    &>button {
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
+
+        background: transparent;
+        box-shadow: 0;
+        outline: 0;
+        border: 0;
+
+        color: white;
+    }
 
     ul {
         display: flex;
