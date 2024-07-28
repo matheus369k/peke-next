@@ -84,7 +84,7 @@ export default function Home() {
           })}
         </ul>
       ) : (
-        <p>Carregando..</p>
+        <p>Carregando</p>
       )}
     </StyledHome>
   )

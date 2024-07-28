@@ -1,6 +1,21 @@
 'use client'
 
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const loading = keyframes`
+    0% {
+        content: '';
+    }
+    25% {
+        content: '.';
+    }
+    50% {
+        content: '..';
+    }
+    75% {
+        content: '...';
+    }
+`;
 
 export const StyledHome = styled.div`
     display: flex;
@@ -18,14 +33,14 @@ export const StyledHome = styled.div`
         gap: .4rem;
 
         h1 {
-            color: ${props=> props.theme.red};
+            color: ${props => props.theme.red};
 
             text-align: center;
 
             font-size: 3rem;
 
             span {
-                color: ${props=> props.theme["gray-100"]};
+                color: ${props => props.theme["gray-100"]};
             }
         }
     }
@@ -49,5 +64,21 @@ export const StyledHome = styled.div`
         align-items: center;
 
         flex-wrap: wrap;
+    }
+
+    &>p {
+        width: 200px;
+
+        margin: auto;
+
+        font-size: 2rem;
+
+        &::after {
+            content: '';
+        
+            animation-name: ${loading};
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
     }
 `

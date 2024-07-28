@@ -350,6 +350,7 @@ export default async function Pokemon({ params }: PokemonPropsType) {
                 alt=''
                 width={400}
                 height={400}
+                loading='lazy'
             />
 
             <StyledPokeMeasures>

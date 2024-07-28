@@ -333,7 +333,7 @@ export function Card({ url, endCard, amountPokeCards }: UrlType) {
 
     return (
         <StyledCard {...endCard && { id: 'card-end' }}>
-            <Image src={dataPoke.image} alt='' width={120} height={120} />
+            <Image src={dataPoke.image} alt='' width={120} height={120} loading='lazy' />
 
             <span>#{dataPoke.id}</span>
 
