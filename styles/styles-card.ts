@@ -11,7 +11,9 @@ export const StyledCard = styled.li`
     padding: 2rem 1rem;
     margin-bottom: 2rem;
 
+    flex: 1;
     width: 23%;
+    min-width: 12.5rem;
 
     border-radius: 1rem;
     border: 1px solid ${props => props.theme.red};

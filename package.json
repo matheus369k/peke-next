@@ -10,14 +10,14 @@
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.7",
-    "axios": "^1.7.2",
+    "axios": "^1.7.3",
     "next": "14.0.0",
     "react": "^18",
     "react-dom": "^18",
-    "styled-components": "^6.1.11"
+    "styled-components": "^6.1.12"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^18",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/styled-components": "^5.1.34",

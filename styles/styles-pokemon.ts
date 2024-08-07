@@ -9,6 +9,8 @@ export const StyledPokemon = styled.div`
 
     gap: 2rem;
     padding-top: 2rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
 
     position: relative;
 
@@ -35,6 +37,19 @@ export const StyledPokemon = styled.div`
         position: absolute;
         left: 0;
     }
+
+    @media (max-width: 849px) {
+        display: flex;
+        flex-direction: column;
+
+        max-width: 40rem;
+
+        margin: auto;
+
+    img {
+        align-self: center;
+    }
+    }
 `
 
 export const StyledPokeTitle = styled.div`
@@ -52,7 +67,7 @@ export const StyledPokeTitle = styled.div`
 
     img {
         position: absolute;
-        inset: -.3125rem;
+        inset: 0;
     }
 
     h2 {

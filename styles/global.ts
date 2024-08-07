@@ -1,3 +1,5 @@
+'use client'
+
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyled = createGlobalStyle`
@@ -30,6 +32,18 @@ export const GlobalStyled = createGlobalStyle`
     font-weight: 400;
     -webkit-font-smoker: antialiased;
     font-family: Arial, Helvetica, sans-serif;
+  }
+
+  @media (max-width: 1024px) {
+    html {
+      font-size: 87.5%;
+    }
+  }
+
+  @media (max-width: 769px) {
+    html {
+      font-size: 75%;
+    }
   }
 
 `

@@ -17,7 +17,14 @@ const loading = keyframes`
     }
 `;
 
-export const StyledHome = styled.div`
+export const StyledHome = styled.main`
+    color: ${props => props.theme['gray-100']};
+
+    min-height: 80vh;
+    max-width: 70rem;
+    
+    margin: auto;
+    
     display: flex;
     flex-direction: column;
 
@@ -64,6 +71,9 @@ export const StyledHome = styled.div`
         align-items: center;
 
         flex-wrap: wrap;
+
+        padding: 0 0.5rem;
+        gap: 1rem;
     }
 
     &>p {
@@ -81,37 +91,4 @@ export const StyledHome = styled.div`
             animation-iteration-count: infinite;
         }
     }
-`
-
-export const StyledNotFoundPage = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    gap: 2rem;
-
-    min-height: 60vh;
-
-    opacity: .75;
-
-    a {
-        text-decoration: none;
-
-        background: ${props => props.theme.white};
-        color: ${props => props.theme.black};
-
-        padding: .7rem 1.2rem;
-
-        border-radius: 6px;
-
-        font-weight: bold;
-
-        transition: background color .4s;
-
-        &:hover {
-            background: ${props => props.theme.red};
-            color: ${props => props.theme.white};
-        }
-    } 
-`
+`;

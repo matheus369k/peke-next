@@ -1,3 +1,5 @@
+'use client'
+
 import { styled } from 'styled-components'
 
 export const StyledNav = styled.nav`
@@ -12,6 +14,7 @@ export const StyledNav = styled.nav`
 
     div {
         display: flex;
+        align-items: center;
         
         gap: .5rem;
     }

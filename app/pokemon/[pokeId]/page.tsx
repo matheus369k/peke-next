@@ -1,5 +1,7 @@
+'use server'
+
 import Image from 'next/image'
-import { StyledPokeMeasures, StyledPokemon, StyledPokeStatus, StyledPokeTitle, StyledPokeTypes } from './styles'
+import { StyledPokeMeasures, StyledPokemon, StyledPokeStatus, StyledPokeTitle, StyledPokeTypes } from '@/styles/styles-pokemon'
 
 interface SinglePokeType {
     id: number
@@ -290,42 +292,36 @@ interface PokemonPropsType {
 
 interface ListPokeType {
     count: number
-    next: string
-    previous: null | [
-        {
-            name: string
-            url: string
-        }],
+    next: null | string
+    previous: null | string
     results: [{
         name: string
         url: string
     }]
 }
 
-export const dynamicParams = false;
-
-export async function generateStaticParams() {
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=10000')
-    const data: ListPokeType = await response.json()
-
-    const paths = data.results.map((pokemon_, index) => {
-        return {
-            pokeId: (index + 1).toString().padStart(4, '0')
-        }
-    })
-
-    return paths
-}
-
-async function getPokemon(id: string) {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${Number(id)}`, {next: {revalidate: false}})
+async function getPokemon(id: number) {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
     const data: SinglePokeType = await response.json()
 
     return data
 }
 
+export async function generateStaticParams() {
+    const response = await fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1307')
+    const data: ListPokeType = await response.json()
+
+    const paths = data.results.map((pokemon_, index) => {
+        return {
+            pokeId: (index + 1).toString().padStart(4, '0'),
+        }
+    })
+
+    return paths;
+}
+
 export default async function Pokemon({ params }: PokemonPropsType) {
-    const pokemon = await getPokemon(params.pokeId)
+    const pokemon = await getPokemon(Number(params.pokeId))
 
     return (
         <StyledPokemon>
@@ -333,8 +329,8 @@ export default async function Pokemon({ params }: PokemonPropsType) {
                 <Image
                     src='/pokeball.png'
                     alt=''
-                    width={60}
-                    height={60}
+                    width={50}
+                    height={50}
                 />
 
                 <h2>{pokemon.name}

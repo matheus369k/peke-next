@@ -1,6 +1,8 @@
+'use client'
+
 import Image from "next/image";
 import Link from "next/link";
-import { StyledNotFoundPage } from "./styles";
+import { StyledNotFoundPage } from "../styles/styles-not-found";
 
 export default function NotFound() {
     return (

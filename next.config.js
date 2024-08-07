@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = { 
-    reactStrictMode: true,
+const nextConfig = {
+    swcMinify: true,
     images: {
         remotePatterns: [
             {
@@ -12,6 +12,6 @@ const nextConfig = {
     compiler: {
         styledComponents: true,
     },
- }
+}
 
 module.exports = nextConfig;

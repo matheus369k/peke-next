@@ -1,11 +1,9 @@
-'use client'
-
 import Link from 'next/link'
 import Image from 'next/image'
 
-import { StyledNav } from './styles'
+import { StyledNav } from '@/styles/styles-navbar'
 
-export function NavBar() {
+export default function NavBar() {
     return (
         <StyledNav>
             <div>
