@@ -28,7 +28,7 @@ export const StyledHome = styled.main`
     display: flex;
     flex-direction: column;
 
-    gap: 2rem;
+    gap: 2.5rem;
 
     position: relative;
 

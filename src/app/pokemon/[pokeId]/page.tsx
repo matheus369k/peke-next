@@ -1,5 +1,3 @@
-'use server'
-
 import Image from 'next/image'
 import { StyledPokeMeasures, StyledPokemon, StyledPokeStatus, StyledPokeTitle, StyledPokeTypes } from '@/styles/styles-pokemon'
 
@@ -301,14 +299,14 @@ interface ListPokeType {
 }
 
 async function getPokemon(id: number) {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
     const data: SinglePokeType = await response.json()
 
     return data
 }
 
 export async function generateStaticParams() {
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1307')
+    const response = await fetch('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1025/', { next: { revalidate: false } })
     const data: ListPokeType = await response.json()
 
     const paths = data.results.map((pokemon_, index) => {

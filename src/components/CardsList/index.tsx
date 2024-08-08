@@ -21,7 +21,7 @@ export default function CardsList() {
     const [backTopScroll, setBackTopScroll] = useState<boolean>(false)
     const [renderLimited, setRenderLimited] = useState({
         start: 0,
-        end: 32
+        end: 40
     })
 
     useEffect(() => {
@@ -43,7 +43,7 @@ export default function CardsList() {
         setRenderLimited((state) => {
             return {
                 ...state,
-                end: state.end + 32
+                end: state.end + 40
             }
         })
     }

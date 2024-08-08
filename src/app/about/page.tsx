@@ -1,7 +1,5 @@
-'use client'
-
 import Image from "next/image";
-import { StyledAbout } from "../../styles/styles-about";
+import { StyledAbout } from "@/styles/styles-about";
 
 export default function About() {
     return (

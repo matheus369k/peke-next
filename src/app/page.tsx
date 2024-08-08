@@ -1,7 +1,5 @@
-'use client'
-
 import Image from 'next/image'
-import { StyledHome } from '../styles/styles-home'
+import { StyledHome } from '@/styles/styles-home'
 import CardsList from '@/components/CardsList'
 
 export default function Home() {
