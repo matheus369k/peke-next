@@ -1,37 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+    <img src="./.github/pokeball.png" align="center" width='32'/>
+    PokeNext
+</h1>
+<div align="center">
+  <a href="#ferramentas">Ferramentas</a> |
+  <a href="#projetos">Projetos</a> |
+  <a href="#aprendizado">Aprendizado</a> |
+  <a href="#licença">Licença</a>
+</div>
 
-## Getting Started
+<p align="center">
+  <img src="https://img.shields.io/github/license/matheus369k/play-movies-series.svg"/>
+</p>
+<p>
+ <img src="./.github/poke-next-preview.png" />
+</p>
 
-First, run the development server:
+## 🧰 Ferramentas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Para criar o projeto fora usado as ferramentas abaixo com foco em testar habilidades com uma aplicação:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- React + NextJs
+- TypeScript
+- styled-components
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 💻 Projeto
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+O principal motivo de criação do projeto foi a aplicação dos meus novo conhecimentos em nextjs e styled-components, e por ser a aplicação usada como base para explicar o funcionamento do nextjs no 🔗[Curso de NextJS](https://www.youtube.com/playlist?list=PLnDvRpP8BnezfJcfiClWskFOLODeqI_Ft) do canal do YouTube 🔗[Matheus Battisti - Hora de Codar](http://www.youtube.com/@MatheusBattisti).
 
-## Learn More
+O Projeto e uma pokedex tradicional conectada a uma api externa, apresentando informações de cada mostro ao acessar os detalhes de cada.
 
-To learn more about Next.js, take a look at the following resources:
+A api gratis usado foi a 🔗[pokeapi](https://pokeapi.co).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Acesse o site 🔗[PokeNext](https://poke-next-two-phi.vercel.app/).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 📖 Aprendizado
 
-## Deploy on Vercel
+Durante o desenvolvimento do projeto tive como praticar 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- A criação de uma aplicação usando o nextjs.
+- Criar rotas usando app router do next 14.
+- Criar rotas dinâmicas.
+- Criar um cachear rotas para otimizar o acesso do usuário ao site.
+- Implementar styled-components ao nextjs.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# poke-next
+## 📃 Licença
+
+Fora usado a licença ( 🔗[MIT](./LICENSE.txt) ) no projeto.
